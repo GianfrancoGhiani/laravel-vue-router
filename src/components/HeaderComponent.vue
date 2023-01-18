@@ -10,14 +10,10 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                    <li class="nav-item">
-                        <a class="nav-link navbar-element" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-element" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-element" href="#">Contact</a>
+                    <li class="nav-item" v-for="link in navbarLinks">
+                        <router-link class="nav-link navbar-element" :to="{ name: link.route }">
+                            {{ link.label }}
+                        </router-link>
                     </li>
                 </ul>
             </div>
@@ -28,7 +24,25 @@
 
 <script>
 export default {
-
+    name: 'HeaderComponent',
+    data() {
+        return {
+            navbarLinks: [
+                {
+                    label: 'Home',
+                    route: 'home'
+                },
+                {
+                    label: 'Projects',
+                    route: 'projects'
+                },
+                {
+                    label: 'Contact',
+                    route: 'contact'
+                }
+            ]
+        }
+    },
 }
 </script>
 
