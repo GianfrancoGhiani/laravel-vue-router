@@ -1,0 +1,270 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as  *;
+
+
+$fa-font-path: './webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+@import 'bootstrap/scss/bootstrap';
+
+
+//              project styling
+body{
+    font-family: 'League Spartan', sans-serif;
+}
+
+//                       scrollbar
+::-webkit-scrollbar {
+    width: 8px;               /* width of the entire scrollbar */
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: $black-bg;    /* color of the scroll thumb */
+    border-radius: 8px;       /* roundness of the scroll thumb */
+    border: 1px solid lighten($color: $grey-bg, $amount: 40);  /* creates padding around scroll thumb */
+}
+
+//                      global styling
+
+#app{
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    h1, h2, h3, h4, h5, th {
+        font-family: 'Sofia Sans', sans-serif;
+        &::first-letter{
+            color: $my-secondary;
+        }
+    }
+    background-color: $black-bg;
+    color: $white-txt;
+    li{
+        list-style: none;
+        a{
+            text-decoration: none;
+            color: $white-txt;
+            &:hover{
+                color: $my-primary;
+            }
+        }
+    }
+    button, .modal-btn{
+        font-weight: 800;
+        border: 1px dotted transparent;
+        &:hover{
+            background-color: $drk-prim;
+            border: 1px dotted $my-secondary;
+
+        }
+        &.dng:hover{
+            background-color: $my-dng;
+            border-color: $my-dng;
+        }
+    }
+    #logo{
+        max-height: 2.5rem;
+        margin-right: 0.7rem;
+        // padding: 0.5rem 0;
+    }
+}
+
+//          header
+header{
+    .my-navbar{
+        background-color: $lgt-black-bg;
+    }
+    &, footer{
+        height: 3.5rem;
+        background-color: $lgt-black-bg;
+    }
+}
+.my-drop, .card{
+    background-color: $grey-bg;
+    .dropdown-item{
+        color: $white-txt;
+        &:hover{
+            background-color: $grey-bg;
+            color: $my-primary;
+        }
+    }
+}
+.form-check-input:checked{
+    background-color: $my-primary;
+    border-color: $my-primary;
+    &[type=checkbox] {
+
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='%23171717' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+    }
+}
+
+//              project index page
+#projIndex{
+    .card{
+        max-height: 60vh;
+        overflow: hidden;
+        .card-body{
+            overflow-y: auto;
+        }
+    }
+    .container-fluid{
+        .row{
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.2rem;
+            a.btn{
+                color: $black-txt;
+            }
+        }
+    }
+    sub{
+        color: $my-primary;
+    }
+    
+}
+
+//              project create page
+#projCreate, #projEdit{
+    color: $white-txt;
+    label{
+        padding: 0;
+    }
+    input, textarea, select{
+        border-radius: 0.3rem;
+        line-height: 2.5rem;
+        &:focus{
+            outline: 1px ridge $my-primary;
+            // background-color: $my-primary;
+        }
+    }
+    .card{
+        max-height: 90%;
+        overflow-y: auto;
+    }
+    .form-switch{
+        input, label{
+            cursor: pointer;
+        }
+    }
+    height: calc(100vh - 3.5rem);
+    overflow-y: hidden;
+    #upload{
+        img{
+            outline: 2px solid $my-primary;
+            outline-offset: 4px;
+            max-width: 80%;
+        }
+    }
+
+}
+
+//              project show page
+#projShow, #tagShow{
+    .container{
+        position: relative;
+        height: calc(100vh - 3.5rem);
+        .edit{
+            position: absolute;
+            bottom: 5rem;
+            right: 0;
+    }}
+    .post-body{
+        display: flex;
+        .body-image{
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+    .edit-proj{
+        i{
+            color: $black-txt;
+        }
+    }
+    .sub{
+        cursor: context-menu;
+        font-size: 80%;
+        padding: .5em;
+        border-radius: .4em;
+        width: fit-content;
+        color: $black-txt;
+        font-weight: 700;
+        background-color: $my-primary;
+        margin-bottom: 1rem;
+        a{
+            color: $black-txt;
+            text-decoration: none;
+        }
+    }
+}
+
+.swal-container{
+    .swal2-popup{
+        background-color: $grey-bg;
+    }
+}
+#tagIndex{
+    a{
+        text-decoration: none;
+        color: $white-txt;
+        &:hover{
+            color: $my-primary;
+        }
+    }
+    .edit i{
+        color: $black-txt;
+    }
+    table{
+        td{
+            width: 15%;
+        }
+        
+        td, th{
+            text-align: center;
+            &.white{
+                // text-align: end;
+                width: 45%;
+            }
+        }
+        
+    }
+}
+#techIndex{
+    a{
+        text-decoration: none;
+        color: $white-txt;
+        &:hover{
+            color: $my-primary;
+        }
+    }
+    .edit i{
+        color: $black-txt;
+    }
+    table{
+        td{
+            width: 15%;
+        }
+        
+        td, th{
+            // text-align: center;
+            &.white{
+                // text-align: end;
+                width: 55%;
+            }
+            .fake-name{
+                border: 0;
+                background-color: transparent;
+                color: $white-txt;
+                &:hover{
+                    color: $my-primary;
+                    
+                }
+            }
+        }
+    }
+}
