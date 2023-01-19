@@ -2,7 +2,7 @@
   <header>
     <HeaderComponent></HeaderComponent>
   </header>
-  <main class="container-md mt-3">
+  <main class="container-md">
     <router-view></router-view>
   </main>
 

@@ -1,18 +1,25 @@
 <template>
-    <div id="home">
+    <div id="home" class="py-3">
         <JumboComponent></JumboComponent>
-
+        <div class="card container p-5 my-3">
+            <div class="card-header">
+                <h3>Portfolio Preview</h3>
+            </div>
+            <div class="card-body">
+                <PreviewComponent></PreviewComponent>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script>
-import HeaderComponent from '../components/HeaderComponent.vue';
 import JumboComponent from '../components/JumboComponent.vue';
-import ProjectCard from '../components/ProjectCard.vue';
+import PreviewComponent from '../components/PreviewComponent.vue';
 
 export default {
     name: 'HomePage',
-    components: { HeaderComponent, JumboComponent, ProjectCard }
+    components: { JumboComponent, PreviewComponent }
 }
 </script>
 
