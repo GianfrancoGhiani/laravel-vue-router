@@ -2,7 +2,7 @@
     <div id="home" class="py-3">
         <JumboComponent></JumboComponent>
         <div class="card container p-5 my-3">
-            <div class="card-header">
+            <div class="card-header px-0">
                 <h3>Portfolio Preview</h3>
             </div>
             <div class="card-body">

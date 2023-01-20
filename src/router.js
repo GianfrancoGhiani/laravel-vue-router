@@ -25,16 +25,17 @@ const router = createRouter({
             name: 'project',
             component: ProjectPage
         },
-        {
-            path: '/404-not-found',
-            name: 'not-found',
-            component: NotFoundPage
-        },
+        
         {
             path: '/contact',
             name: 'contact',
             component: ContactPage
-        }
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: NotFoundPage
+        },
     ]
 });
 export{router};

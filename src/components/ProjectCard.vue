@@ -59,10 +59,12 @@ export default {
         border-color: $my-primary;
         transition: box-shadow ease-in-out 250ms;
 
-        &:hover {
-            -webkit-box-shadow: 0px 0px 7px 3px $my-primary;
-            box-shadow: 0px 0px 7px 3px $my-primary;
-        }
+
+    }
+
+    &:hover {
+        -webkit-box-shadow: 0px 0px 7px 3px $my-primary;
+        box-shadow: 0px 0px 7px 3px $my-primary;
     }
 
     .notImg {

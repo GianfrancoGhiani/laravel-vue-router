@@ -78,15 +78,25 @@ body{
         border-radius: 50%;
         outline: 4px double $my-primary;
         outline-offset: 5px;
+        &:hover{
+            outline: 4px solid $my-primary;
+        }
     }
-    input, textarea, select{
+    input, textarea{
         padding-left: 0.5rem;
         border-radius: 0.3rem;
         line-height: 2.5rem;
+        background-color: lighten($color: $grey-bg, $amount: 20);
+        color: $my-primary;
         &:focus{
             outline: 1px ridge $my-primary;
             outline-offset: 1px;
         }
+    }
+    input::placeholder, textarea::placeholder{
+        line-height: 2.5rem;
+        color: $drk-prim;
+
     }
     p {
         // color: lighten($color: $my-primary, $amount: 10);
